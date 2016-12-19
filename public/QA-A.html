@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Socket.io</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="./css/main.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
+
+	<script>
+			function hideBubbles(){
+			displayIDs[0] = document.getElementById("a1");
+			displayIDs[0].style.visibility = "hidden";
+
+			displayIDs[1] = document.getElementById("a2");
+			displayIDs[1].style.visibility = "hidden";
+
+			displayIDs[2] = document.getElementById("a3");
+			displayIDs[2].style.visibility = "hidden";
+
+			displayIDs[3] = document.getElementById("a4");
+			displayIDs[3].style.visibility = "hidden";
+
+			displayIDs[4] = document.getElementById("a5");
+			displayIDs[4].style.visibility = "hidden";
+
+			localStorage.setItem("messageCount-A", 0);
+			localStorage.setItem("totalAnswersOverHundred", 0);
+			localStorage.setItem("showIndex", 0);
+		}
+
+	</script>
+
+</head>
+
+<body onload = "hideBubbles();">
+
+   <div id="left">
+ 		<div class="talk-bubble_form tri-right_form round left-in">
+	 		<h1 id = "promptDiv"> Prompt: </h1>  
+		</div>
+ 		<div class="talk-bubble_text_form tri-right round right-in">
+			<form>
+				<input type="text" name="message" maxlength="140">
+				<input type="submit" name="submit" value="Send">
+			</form>
+		</div>
+	</div>
+
+	<div id = "right">
+		<h2  id="a1"></h2>
+		<h2  id="a2"></h2>
+		<h2  id="a3"></h2>
+		<h2  id="a4"></h2>
+		<h2  id="a5"></h2>
+	</div>
+
+	<ul id="messages"></ul>
+	<audio id="sound1" src="receive.mp3" preload="auto"></audio>
+ 	<audio id="sound2" src="send.mp3" preload="auto"></audio>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="./js/Display-A.js"></script>
+	<script src="./js/Form-A.js"></script>
+
+</body>
+</html>
